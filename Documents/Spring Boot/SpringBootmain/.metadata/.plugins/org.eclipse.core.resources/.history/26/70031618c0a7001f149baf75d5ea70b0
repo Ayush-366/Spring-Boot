@@ -1,0 +1,23 @@
+package com.cg.service;
+ 
+import java.util.List;
+ 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cg.entity.Order;
+import com.cg.repository.OrderRepository;
+
+@Service
+public class OrderService implements IOrderService{
+	
+	@Autowired
+	OrderRepository orderRepo;
+ 
+	@Override
+	public Order findAllByorderId(int OrderId) {
+
+		return orderRepo.getAllByorderId(OrderId);
+	}
+ 
+}

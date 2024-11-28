@@ -1,0 +1,54 @@
+package com.cg.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cg.exception.ResourceNotFoundException;
+import com.cg.model.Order;
+import com.cg.service.IOrderService;
+
+
+
+@RequestMapping("/api")
+@RestController
+public class OrderController {
+	
+	@Autowired
+	IOrderService orderservice;
+	
+	@GetMapping("/orders")
+	public List<Order> getOrder()
+	{
+		return orderservice.findAllOrders();
+	}
+ 	
+	@GetMapping("/orders/{id}")
+	public Optional<Order> getOrderById(@PathVariable int id)
+	{
+		return orderservice.findOrdersById(id);
+	}
+	
+	@PostMapping("/create")
+	public Order createMyOrder(@RequestBody Order order)
+	{
+		return orderservice.createOrder(order);
+	}
+	
+	@PutMapping("/Orderput")
+	public Order UpdateOrder(@RequestBody Order o1) throws ResourceNotFoundException{
+		int id = o1.getId();
+		return orderservice.updateOrder(id, o1);
+    	
+	}
+
+}

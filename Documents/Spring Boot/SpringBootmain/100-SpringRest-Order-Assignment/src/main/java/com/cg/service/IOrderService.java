@@ -1,0 +1,21 @@
+package com.cg.service;
+
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
+import com.cg.exception.ResourceNotFoundException;
+import com.cg.model.Order;
+
+public interface IOrderService {
+
+	Order createOrder(Order order);
+
+	List<Order> findAllOrders();
+
+	Optional<Order> findOrdersById(int id);
+
+	Order updateOrder(int id, Order o1);
+
+	Map<String, Boolean> deleteOrder(Integer orderId) throws ResourceNotFoundException;
+}

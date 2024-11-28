@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="C:\Users\avishals\Downloads\03-ORDER-CRUD"/>
+			<item value="C:\Users\avishals\Downloads\02-USER-CRUD"/>
+			<item value="C:\Users\avishals\Documents\Spring Boot\02-SpringRest-Order-GET-FROM-DB"/>
+			<item value="C:\Users\avishals\Downloads\01-Spring-Product"/>
+			<item value="C:\Users\avishals\Documents\Spring Boot\01-SpringRest-Product-GET-FROM-DB-Exception\src\main\java\com\cg\controller\ProductController.java"/>
+			<item value="C:\Users\avishals\Documents\Spring Boot\01-Mapping-SpringRest-ProductOrder-CRUD"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="dd"/>
+			<item value="1"/>
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

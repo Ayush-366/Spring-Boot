@@ -1,0 +1,44 @@
+package com.cg.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.cg.model.Order;
+import com.cg.repository.OrderRepository;
+
+@Service
+public class OrderService implements IOrderService {
+	
+	@Autowired
+	OrderRepository orderepository;
+	
+	
+	@Override
+	public List<Order> findAllProducts() {
+		
+		return orderepository.findAll();
+		
+		
+//		ArrayList<Product> products = new ArrayList<Product>();
+//		products.add(new Product(100, "Laptop", 9000.0));  
+//		products.add(new Product(101, "Smart TV", 60000.00));  
+//		products.add(new Product(102, "Mobile",  9000.00));  
+//		return products;
+		
+	}
+
+
+	@Override
+	public List<Order> addProducts() {
+		// TODO Auto-generated method stub
+		ArrayList<Order> order = new ArrayList<Order>();
+		order.add(new Order(100, "Laptop", 9000.0));  
+		order.add(new Order(101, "Smart TV", 60000.00));  
+		order.add(new Order(102, "Mobile",  9000.00)); 
+		return orderepository.save(order);
+	}
+
+}
